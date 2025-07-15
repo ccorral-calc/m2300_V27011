@@ -1,0 +1,3 @@
+[submodule "m2300-compiler"]
+	path = m2300-compiler
+	url = https://github.com/Calculex/m2300-compiler.git

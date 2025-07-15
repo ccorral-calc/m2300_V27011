@@ -1,0 +1,421 @@
+//////////////////////////////////////////////////////////////////////////////
+//
+//    Copyright © 2004 CALCULEX Inc.
+//
+//    The material herein contains information that is proprietary and 
+//    confidential to CALCULEX, Inc. and it is not to be copied or disclosed 
+//    for any purpose except as specifically authorized in writing.
+//
+//       File: m21_recorder_api_feature_list.h
+//    Version: 1.0
+//     Author: dm
+//
+//            MONSSTR 2100 Recorder API Feature List
+//
+//            To be included by "m21_recorder_api.h" only!
+//
+//    Revisions:   
+//
+
+#ifndef _M23_FEATURES_H
+#define _M23_FEATURES_H
+
+
+/*The following are the indexes into the health/critical array*/
+#define  RECORDER_FEATURE          0
+#define  MEMORY_FEATURE            1
+#define  TEMPERATURE_FEATURE       2
+#define  POWER_FEATURE             3
+#define  TIMECODE_FEATURE          4
+#define  VOICE_FEATURE             5
+#define  PCM_FEATURE               6
+#define  M1553_FEATURE             7
+#define  VIDEO_FEATURE             8
+#define  VIDEO_OUT_FEATURE         9
+
+extern int      StartOfPCMHealth;
+extern int      StartOf1553Health;
+extern int      StartOfVideoHealth;
+extern int      StartOfVideoOut;
+
+#define START_OF_VIDEO_FEATURE 4
+#define START_OF_M1553_FEATURE 8
+#define START_OF_PCM_FEATURE   12
+
+extern INT32              ControllerHealthTemps[2];
+extern INT32              VideoHealthTemps[6][2];
+extern INT32              PCMHealthTemps[6][2];
+extern INT32              M1553HealthTemps[6][2];
+extern INT32              PowerSupplyHealthTemps[2];
+extern INT32              FirewireHealthTemps[2];
+
+extern INT32              ControllerPower;
+extern INT32              FirewirePower;
+extern INT32              VideoPower[5];
+extern INT32              M1553Power[5];
+extern INT32              PCMPower[5];
+
+#define  NUMBER_STANDARD_FEATURES  4
+
+#define  MAX_FEATURES     50
+
+extern INT8  FeatureDescriptions[MAX_FEATURES][33];
+
+
+static char *RecorderFeatureBits[32] = {
+           ""                      // 0
+          ,""                      // 1
+          ,""                      // 2
+          ,""                      // 3 
+          ,""                      // 4
+          ,""                      // 5
+          ,"Controller Not Ready"  // 6
+          ,""                   // 7
+          ,""                   // 8
+          ,""                   // 9
+          ,""                   // 10
+          ,""                   // 11
+          ,""                   // 12
+          ,""                   // 13
+          ,""                   // 14
+          ,"Video Boards are Missing" // 15
+          ,"PCM Boards are Missing"   // 16
+          ,"1553 Boards are Missing" // 17
+          ,""                   // 18
+          ,""                   // 19
+          ,"No F2D Data"        // 20
+          ,"No Recorder Data"   // 21
+          ,""                   // 22
+          ,""                   // 23
+          ,""                   // 24
+          ,""                   // 25
+          ,""                   // 26
+          ,""                   // 27
+          ,""                   // 28
+          ,""                   // 29
+          ,""                   // 30
+          ,"BIT failed"         // 31
+};
+
+
+static char *MemoryFeatureBits[32] = {
+           ""                   // 0
+          ,"Media Not Present"  // 1
+          ,"I/O Error"          // 2
+          ,"Bingo Reached"      // 3
+          ,"Memory Full"        // 4
+          ,"Latch is Open"      // 5
+          ,"Disk Not Connected" // 6
+          ,""                   // 7
+          ,""                   // 8
+          ,""                   // 9
+          ,""                   // 10
+          ,""                   // 11
+          ,""                   // 12
+          ,""                   // 13
+          ,""                   // 14
+          ,""                   // 15
+          ,""                   // 16
+          ,""                   // 17
+          ,""                   // 18
+          ,""                   // 19
+          ,""                   // 20
+          ,""                   // 21
+          ,""                   // 22
+          ,""                   // 23
+          ,""                   // 24
+          ,""                   // 25
+          ,""                   // 26
+          ,""                   // 27
+          ,""                   // 28
+          ,""                   // 29
+          ,""                   // 30
+          ,"BIT failed"         // 31
+};
+
+
+static char *TimeFeatureBits[32] = {
+           ""                   // 0
+          ,"No Carrier"         // 1
+          ,"Sync Error"         // 2
+          ,"Count Not Stable"   // 3
+          ,"Overrun"            // 4
+          ,"FlyWheeling"        // 5
+          ,""                   // 6
+          ,""                   // 7
+          ,""                   // 8
+          ,""                   // 9
+          ,""                   // 10
+          ,""                   // 11
+          ,""                   // 12
+          ,""                   // 13
+          ,""                   // 14
+          ,""                   // 15
+          ,""                   // 16
+          ,""                   // 17
+          ,""                   // 18
+          ,""                   // 19
+          ,""                   // 20
+          ,""                   // 21
+          ,""                   // 22
+          ,""                   // 23
+          ,""                   // 24
+          ,""                   // 25
+          ,""                   // 26
+          ,""                   // 27
+          ,""                   // 28
+          ,""                   // 29
+          ,"Time Config Failed" // 30
+          ,"BIT failed"         // 31
+};
+
+static char *VoiceFeatureBits[32] = {
+           ""                   // 0
+          ,"No Signal"          // 1
+          ,"Overrun"                   // 2
+          ,""                   // 3
+          ,""                   // 4
+          ,""                   // 5
+          ,""                   // 6
+          ,""                   // 7
+          ,""                   // 8
+          ,""                   // 9
+          ,""                   // 10
+          ,""                   // 11
+          ,""                   // 12
+          ,""                   // 13
+          ,""                   // 14
+          ,""                   // 15
+          ,""                   // 16
+          ,""                   // 17
+          ,""                   // 18
+          ,""                   // 19
+          ,""                   // 20
+          ,""                   // 21
+          ,""                   // 22
+          ,""                   // 23
+          ,""                   // 24
+          ,""                   // 25
+          ,""                   // 26
+          ,""                   // 27
+          ,""                   // 28
+          ,""                   // 29
+          ,"Voice Config Failed"// 30
+          ,"BIT failed"         // 31
+};
+
+static char *TemperatureFeatureBits[32] = {
+           ""                          // 0
+          ,"Controller Board Temp1"    // 1
+          ,"Controller Board Temp2"    // 2
+          ,""                          // 3
+          ,""                          // 4
+          ,""                          // 5
+          ,"Video Board 1 Temp 1"      // 6
+          ,"Video Board 1 Temp 2"      // 7
+          ,"Video Board 2 Temp 1"      // 8
+          ,"Video Board 2 Temp 2"      // 9
+          ,"Video Board 3 Temp 1"      // 10 
+          ,"Video Board 3 Temp 2"      // 11 
+          ,"Video Board 4 Temp 1"      // 12 
+          ,"Video Board 4 Temp 2"      // 13 
+          ,"M1553 Board 1 Temp 1"      // 14 
+          ,"M1553 Board 1 Temp 2"      // 15 
+          ,"M1553 Board 2 Temp 1"      // 16 
+          ,"M1553 Board 2 Temp 2"      // 17 
+          ,"M1553 Board 3 Temp 1"      // 18 
+          ,"M1553 Board 3 Temp 2"      // 19 
+          ,"M1553 Board 4 Temp 1"      // 20 
+          ,"M1553 Board 4 Temp 2"      // 21 
+          ,"PCM   Board 1 Temp 1"      // 22 
+          ,"PCM   Board 1 Temp 2"      // 23 
+          ,"PCM   Board 2 Temp 1"      // 24 
+          ,"PCM   Board 2 Temp 2"      // 25 
+          ,"PCM   Board 3 Temp 1"      // 26 
+          ,"PCM   Board 3 Temp 2"      // 26 
+          ,"PCM   Board 4 Temp 1"      // 28 
+          ,"PCM   Board 4 Temp 2"      // 29 
+          ,""                          // 30
+          ,""                          // 31
+};
+
+
+static char *PowerFeatureBits[32] = {
+           ""                   // 0
+          ,"Controller Fail"    // 1
+          ,""                   // 2
+          ,""                   // 3
+          ,"Video 1 Fail"       // 4
+          ,"Video 2 Fail"       // 5
+          ,"Video 3 Fail"       // 6
+          ,"Video 4 Fail"       // 7
+          ,""                   // 8
+          ,""                   // 9
+          ,""                   // 10 
+          ,""                   // 11 
+          ,"M1553 1 Fail"       // 12 
+          ,"M1553 2 Fail"       // 13
+          ,"M1553 3 Fail"       // 14
+          ,"M1553 4 Fail"       // 15
+          ,""                   // 16
+          ,""                   // 17
+          ,""                   // 18
+          ,""                   // 19
+          ,"PCM   1 Fail"       // 20 
+          ,"PCM   2 Fail"       // 21 
+          ,"PCM   3 Fail"       // 22
+          ,"PCM   4 Fail"       // 23 
+          ,""                   // 24
+          ,""                   // 25
+          ,""                   // 26
+          ,""                   // 27
+          ,""                   // 28
+          ,""                   // 29
+          ,""                   // 30
+          ,""                   // 31
+};
+
+
+
+static char *AudioVideoFeatureBits[32] = {
+           ""                   // 0
+          ,"NoSignal    "       // 1
+          ,"Overrun     "       // 2
+          ,""                   // 3
+          ,"Reset Failed"       // 4
+          ,"No Packets"         // 5
+          ,"Packet Dropout"     // 6
+          ,""                   // 7
+          ,""                   // 8
+          ,""                   // 9
+          ,""                   // 10
+          ,""                   // 11
+          ,""                   // 12
+          ,""                   // 13
+          ,""                   // 14
+          ,""                   // 15
+          ,""                   // 16
+          ,""                   // 17
+          ,""                   // 18
+          ,""                   // 19
+          ,""                   // 20
+          ,""                   // 21
+          ,""                   // 22
+          ,""                   // 23
+          ,""                   // 24
+          ,""                   // 25
+          ,""                   // 26
+          ,""                   // 27
+          ,""                   // 28
+          ,""                   // 29
+          ,"Video Config Failed"// 30
+          ,"BIT failed"         // 31
+};
+
+static char *VideoOutFeatureBits[32] = {
+           ""                   // 0
+          ,"NoSignal   "        // 1
+          ,""                   // 2
+          ,""                   // 3
+          ,""                   // 4
+          ,""                   // 5
+          ,""                   // 6
+          ,""                   // 7
+          ,""                   // 8
+          ,""                   // 9
+          ,""                   // 10
+          ,""                   // 11
+          ,""                   // 12
+          ,""                   // 13
+          ,""                   // 14
+          ,""                   // 15
+          ,""                   // 16
+          ,""                   // 17
+          ,""                   // 18
+          ,""                   // 19
+          ,""                   // 20
+          ,""                   // 21
+          ,""                   // 22
+          ,""                   // 23
+          ,""                   // 24
+          ,""                   // 25
+          ,""                   // 26
+          ,""                   // 27
+          ,""                   // 28
+          ,""                   // 29
+          ,"Disabled"           // 30
+          ,""                   // 31
+};
+
+
+static char *m1553FeatureBits[32] = {
+           ""                   // 0
+          ,"No Signal"          // 1
+          ,"Overrun"            // 2
+          ,"Time Sync Error"    // 3
+          ,""                   // 4
+          ,""                   // 5
+          ,""                   // 6
+          ,""                   // 7
+          ,""                   // 8
+          ,""                   // 9
+          ,""                   // 10
+          ,""                   // 11
+          ,""                   // 12
+          ,""                   // 13
+          ,""                   // 14
+          ,"Watch word error"   // 15
+          ,""                   // 16
+          ,""                   // 17
+          ,""                   // 18
+          ,""                   // 19
+          ,""                   // 20
+          ,""                   // 21
+          ,""                   // 22
+          ,""                   // 23
+          ,""                   // 24
+          ,""                   // 25
+          ,""                   // 26
+          ,""                   // 27
+          ,""                   // 28
+          ,""                   // 29
+          ,"M1553 Config Failed" // 30
+          ,"BIT failed"         // 31
+};
+
+static char *PCMFeatureBits[32] = {
+           ""                   // 0
+          ,"No Clock"           // 1
+          ,"Overrun"            // 2
+          ,"Watch Word Error"   // 3
+          ,""                   // 4
+          ,""                   // 5
+          ,""                   // 6
+          ,""                   // 7
+          ,""                   // 8
+          ,""                   // 9
+          ,""                   // 10
+          ,""                   // 11
+          ,""                   // 12
+          ,""                   // 13
+          ,""                   // 14
+          ,"Major Lock Error"   // 15
+          ,"Minor Lock Error"   // 16
+          ,""                   // 17
+          ,""                   // 18
+          ,""                   // 19
+          ,"UART Frame Error"   // 20
+          ,"UART Parity Error"  // 21
+          ,"UART Packet Drop"   // 22
+          ,"UART No Packets"    // 23
+          ,""                   // 24
+          ,""                   // 25
+          ,""                   // 26
+          ,""                   // 27
+          ,""                   // 28
+          ,""                   // 29
+          ,"PCM Config Failed"  // 30
+          ,"BIT failed"         // 31
+};
+
+#endif

@@ -1,0 +1,11 @@
+The following instructions should be used to add the MAC Address file to the recorder.
+
+1) Create a file with the name "macaddress.txt". Make sure the filename is all lower case.
+2) The contents of the file is 6 HEX digits seperated by :. So it would look like XX:XX:XX:XX:XX:XX
+3) To copy this file to the recorder perform the following steps.
+	a) Get to the Linux prompt. If m2300 is running, type in ..exit.
+	b) Perform the following command - cd /tmp
+	c) Use lrz to download the file to the recorder.
+	d) When the file is on the recorder perform the following command - cp macaddress /usr/calculex
+	e) Perform the following command - sync
+4) Cycle power on the recorder

@@ -1,0 +1,25 @@
+
+	STARTUP SCRIPT DESCTIPTION
+	
+The m2300 can now process "." from a file residing on the recorder in the /usr/calculex directory. This file MUST be named StartupScript.
+The syntax of the command must be Chapter 10 "." or any provided Calculex "." commands. For example, to automatically publish Time Code(ID 1) and 
+a single Video(ID 21), the following command will be in the script.
+
+	.publish start 192.168.0.12 33333 1 21
+	
+The current system can process up to 32 "." commands in this file.
+
+
+
+	LOADING A "STARTUP SCRIPT" TO THE M2300
+	
+ 1) When the unit boots up and you get an "*", type in ..exit
+ 2) Change directories to /tmp with the following command ->  cd /tmp 
+ 2) Load Startup Script using lrz 
+ 3) Copy <filename> to /usr/calculex <cp <filename> /usr/calculex/StartupScript> .
+ 4) Type in sync
+ 5) The script is now loaded into the system. It can now be controlled from the m2300 using the following commands
+ 	a) .set script on  -> This turns on the script that will be run at startup.
+ 	b) .set script off -> This turns off the script at startup.
+ 	
+ 	After either command, type in .save

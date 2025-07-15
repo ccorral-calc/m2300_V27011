@@ -30,7 +30,7 @@ OBJS = M23_Controller.o M23_Main.o M23_Utilities.o squeue.o M2X_cmd_ascii.o M2X_
        M23_Ethernet.o M23_GPS.o M23_DataConversion.o
 
 m2300_012319: $(OBJS) Makefile
-	$(CC) $(CFLAGS) $(OBJS) $(LIB) -o m2300_012319
+	$(CC) $(CFLAGS) $(OBJS) $(LIB) -o m2300_071525
 
 M23_Controller.o: M23_Controller.c M23_Controller.h
 	$(CC) $(CFLAGS) $(DEFS) -c  -D_REENTRANT M23_Controller.c

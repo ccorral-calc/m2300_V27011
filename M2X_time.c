@@ -177,8 +177,8 @@ void M23_SetSystemTime(char *time)
     Upper |= TIME_JAM_BUSY_BIT;
     M23_WriteControllerCSR(CONTROLLER_JAM_TIME_REL_HIGH,Upper);
 
-    if(debug)
-        printf("Jam Rel Time  %lld, time %03d-%02d:%02d:%02d\r\n",RefTime,JamTime.Days,JamTime.Hours,JamTime.Minutes,JamTime.Seconds);
+
+    printf("Time updated Jam Rel Time  %lld, time %03d-%02d:%02d:%02d\r\n",RefTime,JamTime.Days,JamTime.Hours,JamTime.Minutes,JamTime.Seconds);
 
     SetTime(JamTime);
 

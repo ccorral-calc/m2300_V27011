@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////
 //
-//    Copyright © 2004 CALCULEX Inc.
+//    Copyright ï¿½ 2004 CALCULEX Inc.
 //
 //    The material herein contains information that is proprietary and 
 //    confidential to CALCULEX, Inc. and it is not to be copied or disclosed 
@@ -240,6 +240,6 @@
 
 
 
-#define VERSION_DATE        "Jan 23 2019" 
+#define VERSION_DATE        "Jul 16 2025" 
 #define VERSION_TIME        "14:00:00"
 

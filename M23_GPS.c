@@ -428,8 +428,12 @@ void ProcessGPSCommand()
 
     if(NMEABuffer[0] == '$')
     {
+        if( strncmp(NMEABuffer,"$GPZDA",6) == 0 )
+            printf("NMEA $GPZDA:%s", NMEABuffer);
+
         if( strncmp(NMEABuffer,"$GPRMC",6) == 0 )
         {
+            printf("NMEA $GPRMC:%s", NMEABuffer);
             if(leap_valid == 1)
             {
                 GPS_split_line(NMEABuffer,NMEA,&numTokens);
@@ -466,18 +470,19 @@ void ProcessGPSCommand()
 
                             days_in_month[0] = 31;
 
+                            int doy = day;
                             for(i = 0; i < (month - 1);i++)
                             {
-                                day += days_in_month[i];
+                                doy += days_in_month[i];
                             }
 
                             sscanf(UTC_Time,"%02d%02d%02d.%d",&hour,&minutes,&seconds,&ms);
 
                             memset(JamTime,0x0,20);
-                            sprintf(JamTime,"%03d %02d:%02d:%02d.%03d",day,hour,minutes,seconds,ms);
+                            sprintf(JamTime,"%03d %02d:%02d:%02d.%03d",doy,hour,minutes,seconds,ms);
 
-                            if(debug)
-                                printf("Time From GPS %s\r\n",JamTime);
+                            // if(debug)
+                            printf("Time From GPS %s\r\n",JamTime);
 
                             M23_SetSystemTime(JamTime);
                             JamPending = 1;
@@ -491,8 +496,8 @@ void ProcessGPSCommand()
                         else
                         {
 
-                            if(debug)
-                                printf("1PPS not in sync 0x%x\r\n",CSR);
+                            // if(debug)
+                            printf("1PPS not in sync 0x%x\r\n",CSR);
                         }
                     }
                 }

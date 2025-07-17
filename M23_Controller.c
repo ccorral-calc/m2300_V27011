@@ -1551,6 +1551,7 @@ printf("Setup is %d\r\n",setup);
         M23_TmatsWriteToHost();
     }
 
+    printf("Init GPS...\r\n");
     M23_StartGPS();
 
     M23_StartDiscreteThread();

@@ -429,11 +429,11 @@ void ProcessGPSCommand()
     if(NMEABuffer[0] == '$')
     {
         if( strncmp(NMEABuffer,"$GPZDA",6) == 0 )
-            printf("NMEA $GPZDA:%s", NMEABuffer);
+            printf("NMEA $GPZDA:%s\r\n", NMEABuffer);
 
         if( strncmp(NMEABuffer,"$GPRMC",6) == 0 )
         {
-            printf("NMEA $GPRMC:%s", NMEABuffer);
+            printf("NMEA $GPRMC:%s\r\n", NMEABuffer);
             if(leap_valid == 1)
             {
                 GPS_split_line(NMEABuffer,NMEA,&numTokens);
